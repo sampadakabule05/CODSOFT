@@ -1,16 +1,12 @@
-# Movie Rating Prediction – CodSoft
+# Credit Card Fraud Detection – CodSoft
 
 ## Objective
-Build a regression model to predict movie ratings based on features such as budget, runtime, and number of votes.
+Build a classification model to detect fraudulent credit card transactions using transaction features.
 
 ## Dataset
-- **Features used:**
-  - Budget
-  - Runtime
-  - Votes
-- **Target variable:** Movie Rating
-
-(Note: Replace with your actual dataset details if using a real dataset.)
+- **Source:** creditcard.csv (Kaggle)
+- **Features:** Time, Amount, V1-V28 (anonymised principal components)
+- **Target:** Class (0 = Not Fraud, 1 = Fraud)
 
 ## Technologies Used
 - Python
@@ -19,45 +15,46 @@ Build a regression model to predict movie ratings based on features such as budg
 
 ## Steps Performed
 1. Imported required libraries.
-2. Loaded or created the movie dataset.
-3. Explored dataset structure and checked for missing values.
-4. Selected relevant features (Budget, Runtime, Votes) as input and Rating as output.
-5. Split data into training and testing sets using train-test split.
-6. Trained a Linear Regression model on the training data.
-7. Made predictions on the test data.
+2. Loaded the credit card dataset.
+3. Explored dataset structure and checked class distribution (imbalanced).
+4. Split data into features and target variable.
+5. Performed train-test split (80-20).
+6. Trained a Random Forest Classifier.
+7. Made predictions on test data.
 8. Evaluated model performance using:
-   - R2 Score
-   - Mean Squared Error
-9. Predicted rating for a sample movie input with specific features.
+   - Accuracy Score
+   - Classification Report (Precision, Recall, F1-score)
+   - Confusion Matrix
+9. Predicted fraud status for a sample transaction input.
 
 ## Results
-- **R2 Score:** [Your Output]
-- **Mean Squared Error:** [Your Output]
-- The model successfully predicts approximate movie ratings based on input features.
+- **Accuracy:** [Your Output]
+- The model effectively classifies transactions as fraudulent or not, though precision and recall are more important due to class imbalance.
 
 ## Sample Prediction
-- **Input:** Budget=130, Runtime=140, Votes=2000
-- **Output:** Predicted movie rating (in IMDb scale or dataset scale)
+- **Input:** First row from test dataset
+- **Output:** Predicted class (1 = Fraud, 0 = Not Fraud)
 
 ## Files
-- movie_rating_prediction.ipynb: Jupyter notebook containing complete code, outputs, and sample predictions.
+- credit_card_fraud_detection.ipynb: Jupyter notebook with complete code and outputs.
 
 ## How to Run
-1. Clone the repository or download files.
+1. Clone this repository or download files.
 2. Install required packages:
     ```
     pip install pandas scikit-learn
     ```
-3. Open `movie_rating_prediction.ipynb` in Jupyter or Google Colab.
-4. Run all cells to view outputs and sample predictions.
+3. Ensure `creditcard.csv` is in your working directory.
+4. Open `credit_card_fraud_detection.ipynb` in Jupyter or Google Colab.
+5. Run all cells to view outputs and sample predictions.
 
 ## Task Details
 - **Internship:** CodSoft Data Science Internship
-- **Task:** Movie Rating Prediction
+- **Task:** Credit Card Fraud Detection
 - **Submitted by:** [Your Name]
 
 ## Contact
 For queries, connect via [LinkedIn/GitHub profile link].
 
 ## Conclusion
-This project demonstrates the use of Linear Regression to predict continuous numerical outcomes (movie ratings) based on multiple numerical input features, strengthening regression modelling and evaluation skills.
+This project demonstrates binary classification on highly imbalanced datasets using ensemble methods for fraud detection applications.
